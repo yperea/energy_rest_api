@@ -22,6 +22,28 @@ def get_customer(id: int):
 
     return jsonify ({'message': 'Customer not found'})
 
+#post /customer data: {name :, description:}
+@app.route('/customer', methods=['POST'])
+def create_customer():
+
+    request_data = request.get_json()
+    name = request_data['name']
+    description = request_data['description']
+
+    if CustomerModel.get_by_name(name):
+        return {'message':
+                f"customer with name '{name}' already exists"}, 400
+
+    customer = CustomerModel(name, description)
+
+    try:
+        customer.save()
+    except Exception:
+        return {"message", "Error creating the customer"}, 500
+
+    return customer.json()
+
+
 
 if __name__ == '__main__':
     db.init_app(app)
