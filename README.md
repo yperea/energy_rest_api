@@ -6,6 +6,9 @@ Se requiere la creacion de un RESTful API que exponga un conjunto de 'endpoints'
 ### Solucion
 Se crea una aplicacion Python que implementara los los llamados a los correspondientes modelos Customer, Socket y Device. Dichos llamados expondran las cuatro operaciones CRUD, representadas en los HTTP Verbs POST, GET, PUT y DELETE respectivamente. 
 
+La solucion requiere la creacion de una variable de ambiente llamada BPADB_URL, la cual alojará la ruta de acceso a la base de datos de la aplicacion.
+ejemplo: BPADB_URL=postgresql://user:password@localhost:5432/bpadb
+
 ### Configuracion del entorno de trabajo
 * Sistema Operativo: Ubuntu 18.04 /WSL sobre Windows 10
 * Editor: Visual Studio Code / Flake8
