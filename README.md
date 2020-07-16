@@ -1,7 +1,7 @@
 # energy_rest_api
 
 ### Problema
-Se requiere la creacion de un RESTful API que exponga un conjunto de 'enpoints' para manejar las operaciones CRUD sobre las entidades de Clientes, Puntos de Medida y Medidores.
+Se requiere la creacion de un RESTful API que exponga un conjunto de 'endpoints' para manejar las operaciones CRUD sobre las entidades de Clientes, Puntos de Medida y Medidores.
 
 ### Solucion
 Se crea una aplicacion Python que implementara los recursos correspondientes a los modelos Client, Socket y Device. Cada recurso expondra las cuatro operaciones CRUD, representadas en los REST Verbs POST, GET, PUT y DELETE respectivamente. 
