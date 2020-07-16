@@ -43,6 +43,28 @@ def create_customer():
 
     return customer.json()
 
+#put /customer/<id> data: {name :, description:}
+@app.route('/customer/<int:id>', methods=['PUT'])
+def update_customer(id: int):
+
+    request_data = request.get_json()
+    name = request_data['name']
+    description = request_data['description']
+
+    if CustomerModel.get_by_name(name):
+        return {'message':
+                f"customer with name '{name}' already exists"}, 400
+
+    customer = CustomerModel.get_by_id(id)
+    customer.name = name
+    customer.description = description
+
+    try:
+        customer.save()
+    except Exception:
+        return {"message", "Error updating the customer"}, 500
+
+    return customer.json()
 
 
 if __name__ == '__main__':
