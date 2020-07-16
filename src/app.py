@@ -66,6 +66,18 @@ def update_customer(id: int):
 
     return customer.json()
 
+#delete /customer/<id> data: {name :, description:}
+@app.route('/customer/<int:id>', methods=['DELETE'])
+def delete_customer(id: int):
+
+    customer = CustomerModel.get_by_id(id)
+
+    try:
+        customer.delete()
+    except Exception:
+        return {"message", "Error updating the customer"}, 500
+
+    return jsonify ({'message': 'Customer deleted succesfully'})
 
 if __name__ == '__main__':
     db.init_app(app)
