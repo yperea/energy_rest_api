@@ -12,6 +12,15 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 def create_tables():
     db.create_all()
 
+#get /customer/<id>
+@app.route('/customer/<int:id>')
+def get_customer(id: int):
+    customer = CustomerModel.get_by_id(id)
+
+    if customer:
+        return customer.json()
+
+    return jsonify ({'message': 'Customer not found'})
 
 
 if __name__ == '__main__':
