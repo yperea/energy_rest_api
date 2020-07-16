@@ -4,7 +4,7 @@
 Se requiere la creacion de un RESTful API que exponga un conjunto de 'endpoints' para manejar las operaciones CRUD sobre las entidades de Clientes, Puntos de Medida y Medidores.
 
 ### Solucion
-Se crea una aplicacion Python que implementara los recursos correspondientes a los modelos Client, Socket y Device. Cada recurso expondra las cuatro operaciones CRUD, representadas en los REST Verbs POST, GET, PUT y DELETE respectivamente. 
+Se crea una aplicacion Python que implementara los los llamados a los correspondientes modelos Customer, Socket y Device. Dichos llamados expondran las cuatro operaciones CRUD, representadas en los HTTP Verbs POST, GET, PUT y DELETE respectivamente. 
 
 ### Configuracion del entorno de trabajo
 * Sistema Operativo: Ubuntu 18.04 /WSL sobre Windows 10
